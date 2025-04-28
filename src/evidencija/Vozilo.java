@@ -1,8 +1,11 @@
+package evidencija;
+
 public class Vozilo {
     protected String registracijskiBroj;
     protected String marka;
     protected int godinaProizvodnje;
 
+    // Konstruktor koji odmah postavlja sve podatke
     public Vozilo(String registracijskiBroj, String marka, int godinaProizvodnje) throws NeispravniPodaciException {
         if (godinaProizvodnje < 0) {
             throw new NeispravniPodaciException("Godina proizvodnje mora biti pozitivna.");
@@ -12,7 +15,8 @@ public class Vozilo {
         this.godinaProizvodnje = godinaProizvodnje;
     }
 
-    public Vozilo() { // Prazan konstruktor za potrebe učitavanja iz datoteke
+    // Prazan konstruktor potreban za učitavanje iz datoteke
+    public Vozilo() {
     }
 
     public void prikaziPodatke() {
@@ -23,5 +27,18 @@ public class Vozilo {
 
     public String toFileString() {
         return "Vozilo," + registracijskiBroj + "," + marka + "," + godinaProizvodnje;
+    }
+
+    // Dodatne metode za pristup podacima
+    public String getRegistracijskiBroj() {
+        return registracijskiBroj;
+    }
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public int getGodinaProizvodnje() {
+        return godinaProizvodnje;
     }
 }
