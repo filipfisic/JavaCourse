@@ -3,13 +3,16 @@ public class Vozilo {
     protected String marka;
     protected int godinaProizvodnje;
 
-    public void ucitajPodatke(String registracijskiBroj, String marka, int godinaProizvodnje) throws NeispravniPodaciException {
+    public Vozilo(String registracijskiBroj, String marka, int godinaProizvodnje) throws NeispravniPodaciException {
         if (godinaProizvodnje < 0) {
             throw new NeispravniPodaciException("Godina proizvodnje mora biti pozitivna.");
         }
         this.registracijskiBroj = registracijskiBroj;
         this.marka = marka;
         this.godinaProizvodnje = godinaProizvodnje;
+    }
+
+    public Vozilo() { // Prazan konstruktor za potrebe učitavanja iz datoteke
     }
 
     public void prikaziPodatke() {
