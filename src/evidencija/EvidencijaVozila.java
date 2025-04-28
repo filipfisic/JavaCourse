@@ -34,23 +34,21 @@ public class EvidencijaVozila {
                     String[] dijelovi = linija.split(",");
                     switch (dijelovi[0]) {
                         case "Automobil":
-                            Automobil auto = new Automobil();
-                            auto.ucitajPodatke(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]), Integer.parseInt(dijelovi[4]));
+                            Automobil auto = new Automobil(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]), Integer.parseInt(dijelovi[4]));
                             vozila.add(auto);
                             break;
                         case "Motocikl":
-                            Motocikl moto = new Motocikl();
-                            moto.ucitajPodatke(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]), dijelovi[4]);
+                            Motocikl moto = new Motocikl(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]), dijelovi[4]);
                             vozila.add(moto);
                             break;
                         case "Vozilo":
-                            Vozilo vozilo = new Vozilo();
-                            vozilo.ucitajPodatke(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]));
+                            Vozilo vozilo = new Vozilo(dijelovi[1], dijelovi[2], Integer.parseInt(dijelovi[3]));
                             vozila.add(vozilo);
                             break;
                         default:
                             System.out.println("Nepoznat tip vozila na liniji " + brojLinije + ": " + dijelovi[0]);
                     }
+
                 } catch (Exception e) {
                     System.out.println("Greška pri obradi linije " + brojLinije + ": " + e.getMessage());
                 }
