@@ -1,12 +1,11 @@
+package evidencija;
+
 public class Main {
     public static void main(String[] args) {
         EvidencijaVozila evidencija = new EvidencijaVozila();
         try {
-            Automobil auto1 = new Automobil();
-            auto1.ucitajPodatke("ZG1234AB", "BMW", 2018, 5);
-
-            Motocikl moto1 = new Motocikl();
-            moto1.ucitajPodatke("ST5678CD", "Yamaha", 2020, "Sport");
+            Automobil auto1 = new Automobil("ZG1234AB", "BMW", 2018, 5);
+            Motocikl moto1 = new Motocikl("ST5678CD", "Yamaha", 2020, "Sport");
 
             evidencija.dodajVozilo(auto1);
             evidencija.dodajVozilo(moto1);
